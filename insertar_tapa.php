@@ -6,8 +6,9 @@ if (isset($_REQUEST['insertar']))
   $codigo=$_REQUEST['codigo'];
   $nombre=$_REQUEST['nombre'];
   $precio=$_REQUEST['precio'];
-  $tipo_tapa=$_REQUEST['tipo_tapa'];
+  $tipo=$_REQUEST['tipo_tapa'];
 
+  $_SESSION['tapas'][$codigo]=array($nombre, $precio, $tipo);
 }
 
 print' 

@@ -1,12 +1,20 @@
 <?php
 session_start();
 include 'head.php';
+if (isset($_REQUEST['insertar']))
+{
+  $codigo=$_REQUEST['codigo'];
+
+  unset($_SESSION['tapas'][$codigo]);
+  echo "tapa ".$codigo. " borrada"
+}
+
                                              
  print' 
             <strong>INTRODUCE EL CODIGO DE LA TAPA A  PARA BORRAR <BR><BR></strong>
                                      
         <div   class="postcontent">
-         <form action="" method="post">
+         <form action="borrar_tapa.php" method="post">
             <table align="center" class="content-layout">
               
               
