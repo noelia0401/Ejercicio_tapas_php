@@ -1,12 +1,23 @@
 <?php
 session_start();
 include 'head.php';
-if (isset($_REQUEST['insertar']))
+if (isset($_REQUEST['borrar']))
 {
   $codigo=$_REQUEST['codigo'];
 
+  $elementos=count($_SESSION['tapas']);
+  //echo $elementos." elementos<br>";
+
   unset($_SESSION['tapas'][$codigo]);
-  echo "tapa ".$codigo. " borrada"
+  $elementos_borrar=count($_SESSION['tapas']);
+  if ($elementos != $elementos_borrar)
+  {
+    echo "La tapa se ha borrado exitosamente<br><br>";
+  }
+  else 
+  {
+    echo "LA TAPA NO EXISTE O NO SE HA BORRADO<br><br>";
+  }
 }
 
                                              
@@ -34,4 +45,5 @@ if (isset($_REQUEST['insertar']))
         </table>
     </form>
         </div>';
+var_dump ($_SESSION['tapas']);
  include 'pie.php';
